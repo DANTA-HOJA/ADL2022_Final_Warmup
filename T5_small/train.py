@@ -94,6 +94,12 @@ def parse_args():
     parser.add_argument(
         "--patience", default=3, type=int, help="early stopping patience"
     )
+    parser.add_argument(
+        "--ignore_pad_token_for_loss",
+        type=bool,
+        default=True,
+        help="Whether to ignore the tokens corresponding to " "padded labels in the loss computation or not.",
+    )
     args = parser.parse_args()
     return args
 
@@ -121,7 +127,7 @@ if __name__ == "__main__":
             preds = preds[0]
         print(preds[0])
         decoded_preds = tokenizer.batch_decode(preds, skip_special_tokens=True)
-        if data_args.ignore_pad_token_for_loss:
+        if args.ignore_pad_token_for_loss:
             # Replace -100 in the labels as we can't decode them.
             labels = np.where(labels != -100, labels, tokenizer.pad_token_id)
         decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
