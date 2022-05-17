@@ -12,7 +12,7 @@
 
 - [Multigen](https://github.com/cdjhz/multigen)：
 
-    - Follow the steps in the OTTers github repo to implement.
+    - Follow the steps in the OTTers github repo
 
 - [T5-small](https://github.com/google-research/text-to-text-transfer-transformer)：
 
