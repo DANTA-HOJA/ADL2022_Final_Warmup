@@ -10,9 +10,9 @@
 
 # Models Architecture
 
-- [Multigen](https://github.com/cdjhz/multigen)：
+- [Multigen](https://github.com/cdjhz/multigen)（default used by OTTers）：
 
-    - Follow the steps in the OTTers github repo.
+    - Follow the instructions in the OTTers github repo.
 
 - [T5-small](https://github.com/google-research/text-to-text-transfer-transformer)：
 
