@@ -12,7 +12,7 @@
 
 - [Multigen](https://github.com/cdjhz/multigen)：
 
-    - Follow the steps in the OTTers github repo
+    - Follow the steps in the OTTers github repo.
 
 - [T5-small](https://github.com/google-research/text-to-text-transfer-transformer)：
 
@@ -36,5 +36,5 @@
 # baseline
 
 - For both in_domain and out_of_domain,
-    - sacreBLEU: around 4 (only your answer)
-    - Perplexity: around 50 (concatenated dialogue)
+    - sacreBLEU: around 4（only your answer）
+    - Perplexity: around 50（concatenated dialogue）
