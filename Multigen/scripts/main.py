@@ -289,7 +289,7 @@ def train(args, train_dataset, model, tokenizer):
 
     return global_step, tr_loss / global_step
 
-def evaluate(args, model, tokenizer, evaluate_metrics="ppl", prefix='0'):
+def evaluate(args, model, tokenizer, evaluate_metrics="ppl", prefix='0'): # 從這裡撈輸出的文字
     eval_output_dir = args.output_dir
 
     if prefix == 'test':
@@ -375,7 +375,7 @@ def evaluate(args, model, tokenizer, evaluate_metrics="ppl", prefix='0'):
         nlp = spacy.load("en_core_web_sm")
         
         references = [[x.split() for x in y] for y in eval_dataset.target]
-        predictions = [x.split() for x in gen_seqs]
+        predictions = [x.split() for x in gen_seqs] # print 一下 gen_seqs, predictions, references 有什麼差
         bleu2 = _compute_bleu(references, predictions, max_order=2)
         bleu4 = _compute_bleu(references, predictions, max_order=4)
         result = {
