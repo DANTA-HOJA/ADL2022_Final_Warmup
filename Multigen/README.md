@@ -9,6 +9,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
     networkx == 2.1
     spacy == 2.2.1
     torch-scatter *
+    fairseq
 
 - NOTE：
     - only watch Requirements, do not follow its Preprocessing.
@@ -19,7 +20,9 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
 # HOW TO TRAIN
 
-- Copy `[OTTers_0517dl] dataset/data/in_domain` and `[OTTers_0517dl] dataset/data/out_of_domain` to `Multigen/data`（already done in this repo）
+- Copy `[OTTers_0517dl] dataset/data/in_domain` and `[OTTers_0517dl] dataset/data/out_of_domain` to `Multigen/data/`（already done in this repo）
+
+
 - `cd Multigen/data/` and run commands below：
 
         wget https://s3.amazonaws.com/conceptnet/downloads/2018/edges/conceptnet-assertions-5.6.0.csv.gz
@@ -28,7 +31,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
         python3 extract_cpnet.py
         python3 graph_construction.py
 
-- `cd Multigen`, create folder and download the pre-trained GPT-2 model：
+- `cd Multigen/`, create folder and download the pre-trained GPT-2 model：
 
     - create folder
 
@@ -43,11 +46,11 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
         - after download, change folder_name：`Multigen/models/gpt2` -> `Multigen/models/gpt2-small`
         - after download, change file_name：`Multigen/models/gpt2-small/vocab.json` -> `Multigen/models/gpt2-small/gpt2-vocab.json`
 
-- `cd Multigen/scripts` and run command：
+- `cd Multigen/scripts/` and run command：
 
         python3 add_special_tokens.py
 
-    - after that, it will generate `Multigen/models/gpt2-small/vocab.json`, copy it to `Multigen/data`（replace if it already exist）
+    - after that, it will generate `Multigen/models/gpt2-small/vocab.json`, copy it to `Multigen/data/`（replace if it already exist）
 
 
 - Then we will use "en_core_web_sm"（an english pipeline offered by spacy）, so we need to download it：（[reference](https://clay-atlas.com/blog/2020/05/11/python-cn-package-spacy-error-os/)）
@@ -63,3 +66,10 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
     
         bash preprocess_multi_hop_relational_paths.sh in_domain
         bash preprocess_multi_hop_relational_paths.sh out_of_domain
+
+
+- `cd Multigen/scripts/` Train model by run command：（adjust args in .sh file to fine tune model）
+
+        bash run_main.sh in_domain
+        bash run_main.sh out_of_domain
+
