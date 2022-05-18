@@ -12,11 +12,12 @@
 
 - [Multigen](https://github.com/cdjhz/multigen)（default used by OTTers）：
 
-    - Follow the instructions in the OTTers github repo.
+    - follow the instructions in the OTTers github repo.
 
 - [T5-small](https://github.com/google-research/text-to-text-transfer-transformer)：
 
-    - [download from TA's google drive](https://drive.google.com/drive/folders/1w3dlUWpFTQz5EVVeKdIM_5bmKTsJsdGu)
+    - [download sample script from TA's google drive](https://drive.google.com/drive/folders/1w3dlUWpFTQz5EVVeKdIM_5bmKTsJsdGu)（already download in this repo）
+    - follow the `README.md` in [T5_small](./T5_small/)
 
 
 
@@ -29,7 +30,7 @@
 
 - Fluency score：Perplexity
 
-    - Calculation script：[download from TA's google drive](https://drive.google.com/drive/folders/1w3dlUWpFTQz5EVVeKdIM_5bmKTsJsdGu)
+    - Calculation script：[download sample script from TA's google drive](https://drive.google.com/drive/folders/1w3dlUWpFTQz5EVVeKdIM_5bmKTsJsdGu)（already download in this repo）
 
 
 
