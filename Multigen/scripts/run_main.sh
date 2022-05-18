@@ -1,7 +1,7 @@
 export DATA_TYPE=${1}
 export ROOT_PATH=..
 export DEVICE=0
-export PRE_TRAINED={gpt2-small}
+export PRE_TRAINED=gpt2-small
 CUDA_VISIBLE_DEVICES=${DEVICE} \
 
 python3 main.py \
