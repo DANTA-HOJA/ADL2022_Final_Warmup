@@ -25,17 +25,32 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
         wget https://s3.amazonaws.com/conceptnet/downloads/2018/edges/conceptnet-assertions-5.6.0.csv.gz
         gzip -d conceptnet-assertions-5.6.0.csv.gz
         cd ../preprocess
-        python extract_cpnet.py
-        python graph_construction.py
+        python3 extract_cpnet.py
+        python3 graph_construction.py
 
-- `cd Multigen` and run command below to download the pre-trained GPT-2 model：
+- `cd Multigen`, create folder and download the pre-trained GPT-2 model：
 
-        bash download_pre_trained_GPT_2.sh
+    - create folder
+
+            mkdir -p models
+            cd models
+    
+    - download the pre-trained GPT-2 model（[reference](https://huggingface.co/gpt2/tree/main)）, you need to install `git-lfs` first, if you aren't, using `sudo apt install git-lfs` to install it.
+    
+            git lfs install
+            git clone https://huggingface.co/gpt2
+
+        - after download, change folder_name：`Multigen/models/gpt2` -> `Multigen/models/gpt2-small`
+        - after download, change file_name：`Multigen/models/gpt2-small/vocab.json` -> `Multigen/models/gpt2-small/gpt2-vocab.json`
+
+- `cd Multigen/scripts` and run command：
+
+        python3 add_special_tokens.py
+
+    - after that, it will generate `Multigen/models/gpt2-small/vocab.json`, copy it to `Multigen/data`（replace if it already exist）
 
 
-
-
-- Because it will need "en_core_web_sm", so we need to download it：（[reference](https://clay-atlas.com/blog/2020/05/11/python-cn-package-spacy-error-os/)）
+- Then we will use "en_core_web_sm"（an english pipeline offered by spacy）, so we need to download it：（[reference](https://clay-atlas.com/blog/2020/05/11/python-cn-package-spacy-error-os/)）
 
         python3 -m spacy download en_core_web_sm
 
@@ -46,4 +61,5 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
 - `cd Multigen/preprocess/` and run command：
     
-        bash preprocess_multi_hop_relational_paths.sh
+        bash preprocess_multi_hop_relational_paths.sh in_domain
+        bash preprocess_multi_hop_relational_paths.sh out_of_domain
