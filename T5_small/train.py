@@ -207,5 +207,3 @@ if __name__ == "__main__":
     # result = metric.compute(predictions=[predictions], references=test_dataset['target'])
     # result = {"bleu": result["score"]}
     # print(result)
-
-    trainer.save_model(f"{args.output_dir}/final_model")
