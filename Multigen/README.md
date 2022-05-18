@@ -4,7 +4,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
     python version == 3.8.10
     torch == 1.10.1+cu111
-    transformers == 2.8.0
+    transformers == 2.8.0 *
     nltk == 3.4.5
     networkx == 2.1
     spacy == 2.2.1
@@ -12,7 +12,9 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
     fairseq
 
 - NOTE：
+
     - only watch Requirements, do not follow its Preprocessing.
+　　- force transformers == 2.8.0
     - for torch-scatter： https://github.com/rusty1s/pytorch_scatter, we using `torch==1.10.1+cu111` so run
 
             pip install torch-scatter -f https://data.pyg.org/whl/torch-1.10.1+cu111.html
@@ -73,3 +75,8 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
         bash run_main.sh in_domain
         bash run_main.sh out_of_domain
 
+
+
+# May encounter error
+
+- ModuleNotFoundError: No module named 'transformers.configuration_gpt2'： `from transformers.configuration_gpt2 import GPT2Config` -> `from transformers import GPT2Config`
