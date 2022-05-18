@@ -1,10 +1,10 @@
 # HOW TO TRAIN 
 
-- install proper packages and clone OTTers repo
-- copy `write_csv.py` to `OTTers/data/in_domain/` and `OTTers/data/out_of_domain/` folder
-- switch to `OTTers/data/in_domain/` and run `write_csv.py` (will generate `text.csv` under each folder)
-- switch to `OTTers/data/out_of_domain/` and run `write_csv.py` (will generate `text.csv` under each folder)
-- run `train.py` with proper command line argument
+- Install proper packages and clone OTTers repo（install [huggingface/transformers](https://github.com/huggingface/transformers) let you prepare almost everything）
+- Copy `write_csv.py` to `OTTers/data/in_domain/` and `OTTers/data/out_of_domain/` folder
+- Switch to `OTTers/data/in_domain/` and run `write_csv.py` (will generate `text.csv` under each folder)
+- Switch to `OTTers/data/out_of_domain/` and run `write_csv.py` (will generate `text.csv` under each folder)
+- Run `train.py` with proper command line argument
 
 
 
