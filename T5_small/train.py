@@ -57,12 +57,16 @@ def read_data(data_dir):
     for split in splits:
         directory = os.path.join(data_dir, split)
         datasets[split] = load_dataset(directory, data_files=['text.csv'])
+        
+        # print(datasets[split])
+        # input("=> print datasets[split], press Any key to continue")
+        
         if split != 'test':
             datasets[split] = datasets[split].map(
                 preprocess_function,
                 batched=True,
                 remove_columns=['inputs', 'target'],
-            )['train']
+            )['train'] # 預設會丟進 "train" 的 dict，要拿出來
         else:
             datasets[split] = datasets[split]['train']
     return datasets['train'], datasets['dev'], datasets['test']
@@ -94,12 +98,12 @@ def parse_args():
     parser.add_argument(
         "--patience", default=3, type=int, help="early stopping patience"
     )
-    parser.add_argument(
-        "--ignore_pad_token_for_loss",
-        type=bool,
-        default=True,
-        help="Whether to ignore the tokens corresponding to " "padded labels in the loss computation or not.",
-    )
+    # parser.add_argument(
+    #     "--ignore_pad_token_for_loss",
+    #     type=bool,
+    #     default=True,
+    #     help="Whether to ignore the tokens corresponding to " "padded labels in the loss computation or not.",
+    # )
     args = parser.parse_args()
     return args
 
@@ -113,7 +117,9 @@ if __name__ == "__main__":
     train_dataset, eval_dataset, test_dataset = read_data(dataset_dir) 
     model = T5ForConditionalGeneration.from_pretrained(args.model_name_or_path)
     data_collator = DataCollatorForSeq2Seq(tokenizer, model=model, label_pad_token_id=-100)
-    metric = load_metric("sacrebleu")
+    # metric = load_metric("sacrebleu")
+    # print(metric)
+    # input("=> print metric, press Any key to continue")
 
     # def postprocess_text(preds, labels):
     #     preds = [pred.strip() for pred in preds]
@@ -194,8 +200,12 @@ if __name__ == "__main__":
     output_prediction_file = os.path.join(training_args.output_dir, "generated_predictions.txt")
     with open(output_prediction_file, "w", encoding="utf-8") as writer:
         writer.write("\n".join(predictions))
-    result = metric.compute(predictions=[predictions], references=test_dataset['target'])
-    result = {"bleu": result["score"]}
-    print(result)
+        
+    output_reference_file = os.path.join(training_args.output_dir, "reference_target.txt")
+    with open(output_reference_file, "w", encoding="utf-8") as writer:
+        writer.write("\n".join(test_dataset['target']))
+    # result = metric.compute(predictions=[predictions], references=test_dataset['target'])
+    # result = {"bleu": result["score"]}
+    # print(result)
 
-    trainer.save_model(args.output_dir)
+    trainer.save_model(f"{args.output_dir}/final_model")
