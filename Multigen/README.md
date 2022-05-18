@@ -74,9 +74,3 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
         bash run_main.sh in_domain
         bash run_main.sh out_of_domain
-
-
-
-# May encounter error
-
-- ModuleNotFoundError: No module named 'transformers.configuration_gpt2'： `from transformers.configuration_gpt2 import GPT2Config` -> `from transformers import GPT2Config`
