@@ -70,7 +70,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
         bash preprocess_multi_hop_relational_paths.sh out_of_domain
 
 
-- `cd Multigen/scripts/` Train model by run command：（adjust args in .sh file to fine tune model）
+- `cd Multigen/scripts/` Train model by run command：（adjust arguments list in `run_main.sh` file to fine tune model）
 
         bash run_main.sh in_domain
         bash run_main.sh out_of_domain
