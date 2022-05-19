@@ -22,8 +22,8 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
 # HOW TO TRAIN
 
-- Copy `[OTTers_0517dl] dataset/data/in_domain` and `[OTTers_0517dl] dataset/data/out_of_domain` to `Multigen/data/`（already done in this repo）
-
+- Download [OTTers_dataset](https://github.com/karinseve/OTTers) and copy `OTTers/data/in_domain` and `OTTers/data/out_of_domain` to `Multigen/data/`（already done in this repo）
+        - or just use backup dataset `[OTTers_0517dl] dataset` in this repo.
 
 - `cd Multigen/data/` and run commands below：
 
@@ -48,7 +48,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
         - after download, change folder_name：`Multigen/models/gpt2` -> `Multigen/models/gpt2-small`
         - after download, change file_name：`Multigen/models/gpt2-small/vocab.json` -> `Multigen/models/gpt2-small/gpt2-vocab.json`
 
-- `cd Multigen/scripts/` and run command：
+- `cd Multigen/scripts/` and run command to add special tokens to vocabulary（`gpt2-vocab.json`）：
 
         python3 add_special_tokens.py
 
@@ -59,7 +59,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
         python3 -m spacy download en_core_web_sm
 
-- Add new line at the end of `Multigen/preprocess/paths.cfg`：
+- Add new line at the end of `Multigen/preprocess/paths.cfg`, let it can find [OTTers_dataset](https://github.com/karinseve/OTTers) ：
 
         in_domain_dir = ../data/in_domain
         out_of_domain_dir = ../data/out_of_domain
