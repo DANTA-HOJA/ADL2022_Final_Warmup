@@ -12,12 +12,12 @@
 
 - [Multigen](https://github.com/cdjhz/multigen)（default used by OTTers）：
 
-    - follow the instructions in [./Multigen/README.md](./Multigen/README.md).
+    - `cd Multigen/` and follow the instructions in [README.md](./Multigen/README.md).
 
 - [T5-small](https://github.com/google-research/text-to-text-transfer-transformer)：
 
     - [download sample script from TA's google drive](https://drive.google.com/drive/folders/1w3dlUWpFTQz5EVVeKdIM_5bmKTsJsdGu)（already download in this repo）
-    - follow the instructions in [./T5_small/README.md](./T5_small/README.md)
+    - `cd T5_small` and follow the instructions in [README.md](./T5_small/README.md)
 
 
 
