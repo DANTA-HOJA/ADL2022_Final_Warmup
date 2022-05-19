@@ -17,7 +17,7 @@
 - [T5-small](https://github.com/google-research/text-to-text-transfer-transformer)：
 
     - [download sample script from TA's google drive](https://drive.google.com/drive/folders/1w3dlUWpFTQz5EVVeKdIM_5bmKTsJsdGu)（already download in this repo）
-    - `cd T5_small` and follow the instructions in [README.md](./T5_small/README.md)
+    - `cd T5_small/` and follow the instructions in [README.md](./T5_small/README.md)
 
 
 
