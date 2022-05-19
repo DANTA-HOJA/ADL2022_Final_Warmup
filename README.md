@@ -37,5 +37,5 @@
 # baseline
 
 - For both in_domain and out_of_domain,
-    - sacreBLEU: around 4（only your answer）
-    - Perplexity: around 50（concatenated dialogue）
+    - sacreBLEU: around 4（only generated answer）
+    - Perplexity: around 50（concatenated dialogue = people1_says + generated answer + people2_says）
