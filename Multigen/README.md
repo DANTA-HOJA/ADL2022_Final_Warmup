@@ -5,17 +5,17 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
     python version == 3.8.10
     torch == 1.10.1+cu111
     transformers == 2.8.0 *
-    nltk == 3.4.5
-    networkx == 2.1
-    spacy == 2.2.1
-    torch-scatter *
-    fairseq
+    nltk == 3.7
+    networkx == 2.8
+    spacy == 3.3.0
+    torch-scatter *（depends on your torch version）
+    fairseq == 0.10.2
 
 - NOTE：
 
-    - only watch Requirements, do not follow its Preprocessing.
-　　- force transformers == 2.8.0
-    - for torch-scatter： https://github.com/rusty1s/pytorch_scatter, we using `torch==1.10.1+cu111` so run
+    - watch *Requirements*, but do NOT follow *Preprocessing*, otherwise you may raise many error.
+    - force `transformers == 2.8.0`
+    - installation of `torch-scatter`： https://github.com/rusty1s/pytorch_scatter, for example, this repo demonstrate on `torch==1.10.1+cu111` so run
 
             pip install torch-scatter -f https://data.pyg.org/whl/torch-1.10.1+cu111.html
 
