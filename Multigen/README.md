@@ -22,8 +22,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
 # HOW TO TRAIN
 
-- Download [OTTers_dataset](https://github.com/karinseve/OTTers) and copy `OTTers/data/in_domain` and `OTTers/data/out_of_domain` to `Multigen/data/`（already done in this repo）
-        - or just use backup dataset `[OTTers_0517dl] dataset` in this repo.
+- Download [OTTers_dataset](https://github.com/karinseve/OTTers) or just use backup `[OTTers_0517dl] dataset` in this repo, and copy its sub folder `data/in_domain` and `data/out_of_domain` to `Multigen/data/`（already done in this repo）.
 
 - `cd Multigen/data/` and run commands below：
 
