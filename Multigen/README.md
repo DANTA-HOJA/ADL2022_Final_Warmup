@@ -22,7 +22,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
 # HOW TO TRAIN
 
-- Download [OTTers_dataset](https://github.com/karinseve/OTTers) or just use backup `[OTTers_0517dl] dataset` in this repo, and copy its sub folder `data/in_domain` and `data/out_of_domain` to `Multigen/data/`（already done in this repo）.
+- Download [OTTers_dataset](https://github.com/karinseve/OTTers) or just use backup `[OTTers_0517dl] dataset/` in this repo, and copy its sub folder `data/in_domain` and `data/out_of_domain` to `Multigen/data/`（already done in this repo）.
 
 - `cd Multigen/data/` and run commands below：
 
@@ -58,7 +58,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
         python3 -m spacy download en_core_web_sm
 
-- Add new line at the end of `Multigen/preprocess/paths.cfg`, let it can find [OTTers_dataset](https://github.com/karinseve/OTTers) ：
+- Add new line at the end of `Multigen/preprocess/paths.cfg`, make it to find [OTTers_dataset](https://github.com/karinseve/OTTers) ：
 
         in_domain_dir = ../data/in_domain
         out_of_domain_dir = ../data/out_of_domain
