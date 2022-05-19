@@ -1,6 +1,6 @@
 # HOW TO TRAIN 
 
-- Install proper packages and clone OTTers repo（install [huggingface/transformers](https://github.com/huggingface/transformers) let you prepare almost everything）
+- Install proper packages and clone OTTers repo
 - Copy `write_csv.py` to `OTTers/data/in_domain/` and `OTTers/data/out_of_domain/`
 - `cd OTTers/data/in_domain/` and run `write_csv.py` (will generate `text.csv` under each subfolder)
 - `cd OTTers/data/out_of_domain/` and run `write_csv.py` (will generate `text.csv` under each subfolder)
