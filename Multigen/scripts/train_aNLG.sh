@@ -15,6 +15,7 @@ python3 main.py \
     --model_type gpt2 \
     --model_name_or_path ${ROOT_PATH}/models/gpt2-small \
     --do_train \
+    --validate_steps -1 \
     --per_gpu_train_batch_size 16 \
     --per_gpu_eval_batch_size 16 \
     --workers 7 \
