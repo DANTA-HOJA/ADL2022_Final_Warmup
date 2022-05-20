@@ -5,7 +5,7 @@ runs
 Multigen/data/conceptnet-assertions-5.6.0.csv
 Multigen/data/conceptnet_en.txt
 Multigen/data/cpnet.graph
-Multigen/models/in_domain
+Multigen/models/anlg
 
 total_concepts.txt
 
