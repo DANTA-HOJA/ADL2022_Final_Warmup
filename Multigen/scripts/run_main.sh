@@ -15,6 +15,7 @@ python3 main.py \
     --model_type gpt2 \
     --model_name_or_path ${ROOT_PATH}/models/${PRE_TRAINED} \
     --do_train \
+    --validate_steps -1 \
     --per_gpu_train_batch_size 16 \
     --per_gpu_eval_batch_size 16 \
     --workers 7 \
@@ -33,3 +34,4 @@ python3 main.py \
 
 
 # --do_eval      ** --do_eval , --do_train 每次只能選一個開，因為 --output_dir 在程式裡會被換掉都開會蓋到對方
+# --validate_steps -1 自動計算成 train_dataloader 的長度 
