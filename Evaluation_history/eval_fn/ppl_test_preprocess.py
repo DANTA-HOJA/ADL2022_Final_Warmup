@@ -45,7 +45,7 @@ def main():
     
     assert len(people1) == len(people2) == len(transition), f"file length not match, the files you feed in may not a pair."
     
-    with open("ppl_input.txt", 'w') as f:
+    with open("../ppl_input.txt", 'w') as f:
         for i in range(len(people1)):
             f.write(f"{people1[i]} {transition[i]} {people2[i]}\n")
             # print(f"{people1[i]} {transition[i]} {people2[i]}\n")
