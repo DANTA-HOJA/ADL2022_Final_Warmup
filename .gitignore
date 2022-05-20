@@ -5,9 +5,11 @@ runs
 Multigen/data/conceptnet-assertions-5.6.0.csv
 Multigen/data/conceptnet_en.txt
 Multigen/data/cpnet.graph
+Multigen/models/in_domain
 
 total_concepts.txt
 
 concepts_nv.json
 2hops_100_triple.json
 2hops_100_directed_triple_filter.json
+
