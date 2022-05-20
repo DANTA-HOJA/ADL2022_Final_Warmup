@@ -32,7 +32,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
         python3 extract_cpnet.py
         python3 graph_construction.py
 
-3. `cd Multigen/`, create folder and download the pre-trained GPT-2 model：
+3. `cd Multigen/`, create folder and download the pre-trained GPT-2 model： 待修正：是先用別人的anlg pretrain 然後再存起來  otter training時再load回去~
 
     - create folder
 
