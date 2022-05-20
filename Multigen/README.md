@@ -9,19 +9,20 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
     nltk == 3.7
     networkx == 2.8
     spacy == 3.3.0
+    scipy == 1.8.1
     torch-scatter *（depends on your torch version）
     fairseq == 0.10.2
 
 - NOTE：
 
-    - watch *Requirements*, but do NOT follow *Preprocessing*, otherwise you may raise many error.
+    - only watch *Requirements* part, you may encounter many error if you do with another part, the package are already different because of updates.
     - force `transformers == 2.8.0`
     - installation of `torch-scatter`： https://github.com/rusty1s/pytorch_scatter, for example, this repo demonstrate on `torch==1.10.1+cu111` so run
 
             pip install torch-scatter -f https://data.pyg.org/whl/torch-1.10.1+cu111.html
 
 
-# HOW TO TRAIN
+# How to train aNLG
 
 1. Download [OTTers_dataset](https://github.com/karinseve/OTTers) or just use backup `[OTTers_0517dl] dataset/` in this repo, and copy its sub folder `data/in_domain` and `data/out_of_domain` to `Multigen/data/`（already done in this repo）.
 
@@ -65,7 +66,10 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
         out_of_domain_dir = ../data/out_of_domain
 
 7. `cd Multigen/preprocess/` and run command：
-    
+        
+        
+        bash preprocess_multi_hop_relational_paths.sh anlg ****
+
         bash preprocess_multi_hop_relational_paths.sh in_domain
         bash preprocess_multi_hop_relational_paths.sh out_of_domain
 
@@ -74,3 +78,5 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
         bash run_main.sh in_domain
         bash run_main.sh out_of_domain
+
+# How to evaluation with OTTers dataset
