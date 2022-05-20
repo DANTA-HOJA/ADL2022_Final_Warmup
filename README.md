@@ -23,14 +23,10 @@
 
 # Evaluation Metric
 
-- N-gram matching based score：[sacreBLEU](https://github.com/mjpost/sacrebleu)
+- N-gram matching based score：[**sacreBLEU**](https://github.com/mjpost/sacrebleu)
+- Fluency score：**Perplexity**（[TA's sample script：perplexity.py](https://drive.google.com/drive/folders/1w3dlUWpFTQz5EVVeKdIM_5bmKTsJsdGu)）
 
-        sacrebleu reference.txt -i prediction.txt -b -m bleu -w 3 --lowercase 
-
-
-- Fluency score：Perplexity
-
-    - Calculation script：[download sample script from TA's google drive](https://drive.google.com/drive/folders/1w3dlUWpFTQz5EVVeKdIM_5bmKTsJsdGu)（already download in this repo）
+- Please check [./Evaluation_history/README.md](./Evaluation_history/README.md) for detail usage
 
 
 
