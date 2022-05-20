@@ -1,8 +1,8 @@
-export DATA_TYPE=${1}
+export DATA_TYPE=in_domain
 export ROOT_PATH=..
 export DEVICE=1
 export CUDA_VISIBLE_DEVICES=${DEVICE}
-export PRE_TRAINED=# pre-trained OTTers   # 換成 train 好的 OTTers
+export PRE_TRAINED=in_domain/grf-in_domain # 換成 train 好的 OTTers
 
 python3 main.py \
     --train_data_file ${ROOT_PATH}/data/${DATA_TYPE}/train \
