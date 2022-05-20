@@ -22,7 +22,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
             pip install torch-scatter -f https://data.pyg.org/whl/torch-1.10.1+cu111.html
 
 
-# How to train aNLG
+# How to prepare Pre-trained aNLG
 
 1. Download [OTTers_dataset](https://github.com/karinseve/OTTers) or just use backup `[OTTers_0517dl] dataset/` in this repo, and copy its sub folder `data/in_domain` and `data/out_of_domain` to `Multigen/data/`（already done in this repo）.
 
@@ -76,7 +76,17 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
 8. `cd Multigen/scripts/` Train model by run command：（adjust arguments list in `run_main.sh` file to fine tune model）
 
-        bash run_main.sh in_domain
-        bash run_main.sh out_of_domain
 
-# How to evaluation with OTTers dataset
+        bash train_aNLG.sh
+
+        bash train_OTTers.sh in_domain
+        bash train_OTTers.sh out_of_domain
+
+        bash eval_OTTers_in_domain.sh
+        bash eval_OTTers_out_of_domain.sh
+
+# How to Train with OTTers dataset
+
+
+
+# How to Evaluation with OTTers dataset
