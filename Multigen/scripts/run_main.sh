@@ -1,8 +1,8 @@
 export DATA_TYPE=${1}
 export ROOT_PATH=..
-export DEVICE="0, 1"
+export DEVICE=1
 export PRE_TRAINED=gpt2-small
-CUDA_VISIBLE_DEVICES=${DEVICE} \
+export CUDA_VISIBLE_DEVICES=${DEVICE}
 
 python3 main.py \
     --train_data_file ${ROOT_PATH}/data/${DATA_TYPE}/train \
