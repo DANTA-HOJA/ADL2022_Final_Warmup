@@ -1,6 +1,6 @@
 export DATA_TYPE=${1}
 export ROOT_PATH=..
-export DEVICE=0
+export DEVICE="0, 1"
 export PRE_TRAINED=gpt2-small
 CUDA_VISIBLE_DEVICES=${DEVICE} \
 
