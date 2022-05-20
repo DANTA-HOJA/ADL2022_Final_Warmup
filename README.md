@@ -33,5 +33,5 @@
 # baseline
 
 - For both `OTTers：in_domain` and `OTTers：out_of_domain`,
-    - sacreBLEU: around 4（only generated answer）
-    - Perplexity: around 50（concatenated dialogue = people1_says + generated answer + people2_says）
+- **sacreBLEU**：around 4（compare only with generated results）
+- **Perplexity**：around 50（compare with concatenated dialogue => people1_says + generated answer + people2_says）
