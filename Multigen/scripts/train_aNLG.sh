@@ -31,3 +31,7 @@ python3 main.py \
     --weight_decay 0.0 \
     --warmup_ratio 0.0 \
     --logging_steps 20 \
+
+
+# --do_eval      ** --do_eval , --do_train 每次只能選一個開，因為 --output_dir 在程式裡會被換掉都開會蓋到對方
+# --validate_steps -1 自動計算成 train_dataloader 的長度 
