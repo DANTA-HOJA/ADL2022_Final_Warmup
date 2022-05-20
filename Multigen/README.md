@@ -4,6 +4,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
 
     python version == 3.8.10
     torch == 1.10.1+cu111
+    tensoflow == 2.4.1
     transformers == 2.8.0 *
     nltk == 3.7
     networkx == 2.8
