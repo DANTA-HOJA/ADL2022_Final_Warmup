@@ -1,0 +1,157 @@
+[05/20/2022 17:22:24 - WARNING - root] Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+[05/20/2022 17:22:24 - INFO - transformers.tokenization_utils] Model name '../models/in_domain/grf-in_domain' not found in model shortcut name list (gpt2, gpt2-medium, gpt2-large, distilgpt2). Assuming '../models/in_domain/grf-in_domain' is a path, a model identifier, or url to a directory containing tokenizer files.
+[05/20/2022 17:22:24 - INFO - transformers.tokenization_utils] Didn't find file ../models/in_domain/grf-in_domain/added_tokens.json. We won't load it.
+[05/20/2022 17:22:24 - INFO - transformers.tokenization_utils] Didn't find file ../models/in_domain/grf-in_domain/special_tokens_map.json. We won't load it.
+[05/20/2022 17:22:24 - INFO - transformers.tokenization_utils] Didn't find file ../models/in_domain/grf-in_domain/tokenizer_config.json. We won't load it.
+[05/20/2022 17:22:24 - INFO - transformers.tokenization_utils] loading file ../models/in_domain/grf-in_domain/vocab.json
+[05/20/2022 17:22:24 - INFO - transformers.tokenization_utils] loading file ../models/in_domain/grf-in_domain/merges.txt
+[05/20/2022 17:22:24 - INFO - transformers.tokenization_utils] loading file None
+[05/20/2022 17:22:24 - INFO - transformers.tokenization_utils] loading file None
+[05/20/2022 17:22:24 - INFO - transformers.tokenization_utils] loading file None
+[05/20/2022 17:22:25 - INFO - transformers.configuration_utils] loading configuration file ../models/in_domain/grf-in_domain/config.json
+[05/20/2022 17:22:25 - INFO - transformers.configuration_utils] Model config GPT2Config {
+  "_num_labels": 2,
+  "activation_function": "gelu_new",
+  "architectures": [
+    "MultiHopGen"
+  ],
+  "attn_pdrop": 0.1,
+  "bad_words_ids": null,
+  "bos_token_id": 50256,
+  "decoder_start_token_id": null,
+  "do_sample": false,
+  "early_stopping": false,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "is_encoder_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_epsilon": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "min_length": 0,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "no_repeat_ngram_size": 0,
+  "num_beams": 1,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": null,
+  "prefix": null,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "resid_pdrop": 0.1,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 50259
+}
+
+[05/20/2022 17:22:25 - INFO - transformers.modeling_utils] loading weights file ../models/in_domain/grf-in_domain/pytorch_model.bin
+[05/20/2022 17:22:26 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[05/20/2022 17:22:26 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[05/20/2022 17:22:27 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[05/20/2022 17:22:27 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[05/20/2022 17:22:30 - INFO - root] ----------------------------------------------------------------------------------------------------
+[05/20/2022 17:22:30 - INFO - root] CONFIG:
+{
+    "adam_epsilon": 1e-08,
+    "aggregate_method": "max",
+    "alpha": 3.0,
+    "beta": 5.0,
+    "dev_data_file": "../data/in_domain/dev",
+    "device": "cuda",
+    "do_eval": true,
+    "do_generate": false,
+    "do_train": false,
+    "evaluate_metrics": "bleu",
+    "fp16": false,
+    "fp16_opt_level": "O1",
+    "gamma": 0.5,
+    "gradient_accumulation_steps": 1,
+    "graph_path": "2hops_100_directed_triple_filter.json",
+    "learning_rate": 1e-06,
+    "local_rank": -1,
+    "logging_steps": 50,
+    "max_grad_norm": 1.0,
+    "max_steps": -1,
+    "model_name_or_path": "../models/in_domain/grf-in_domain",
+    "model_type": "gpt2",
+    "n_gpu": 1,
+    "no_cuda": false,
+    "num_train_epochs": 1,
+    "output_dir": "../models/in_domain/grf-in_domain_eval",
+    "overwrite_cache": false,
+    "overwrite_output_dir": true,
+    "per_gpu_eval_batch_size": 16,
+    "per_gpu_train_batch_size": 16,
+    "save_last": false,
+    "seed": 42,
+    "server_ip": "",
+    "server_port": "",
+    "source_length": 32,
+    "target_length": 32,
+    "tb_log_dir": null,
+    "test_data_file": "../data/in_domain/test",
+    "train_data_file": "../data/in_domain/train",
+    "validate_steps": 3200,
+    "warmup_ratio": 0,
+    "weight_decay": 0.0,
+    "workers": 7
+}
+[05/20/2022 17:22:30 - INFO - root] ----------------------------------------------------------------------------------------------------
+[05/20/2022 17:22:31 - INFO - root] --------------------------------------------------Features--------------------------------------------------
+[05/20/2022 17:22:31 - INFO - root] Input: ['Ġmy', 'Ġjob', 'Ġhel', 'pe', 'Ġme', 'Ġteach', 'Ġkids', '.', '<|endoftext|>', 'Ġeducation', 'Ġis', 'Ġa', 'Ġpassion', 'Ġof', 'Ġmine', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[05/20/2022 17:22:31 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[05/20/2022 17:22:31 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[05/20/2022 17:22:31 - INFO - root] Target: []
+[05/20/2022 17:22:31 - INFO - root] Position: []
+[05/20/2022 17:22:31 - INFO - root] Labels: []
+[05/20/2022 17:22:31 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[05/20/2022 17:22:31 - INFO - root] Input: ['Ġmy', 'Ġjob', 'Ġhel', 'pe', 'Ġme', 'Ġteach', 'Ġkids', '.', '<|endoftext|>', 'Ġeducation', 'Ġis', 'Ġa', 'Ġpassion', 'Ġof', 'Ġmine', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[05/20/2022 17:22:31 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[05/20/2022 17:22:31 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[05/20/2022 17:22:31 - INFO - root] Target: []
+[05/20/2022 17:22:31 - INFO - root] Position: []
+[05/20/2022 17:22:31 - INFO - root] Labels: []
+[05/20/2022 17:22:31 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[05/20/2022 17:22:31 - INFO - root] Input: ['Ġmy', 'Ġjob', 'Ġhel', 'pe', 'Ġme', 'Ġteach', 'Ġkids', '.', '<|endoftext|>', 'Ġeducation', 'Ġis', 'Ġa', 'Ġpassion', 'Ġof', 'Ġmine', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[05/20/2022 17:22:31 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[05/20/2022 17:22:31 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[05/20/2022 17:22:31 - INFO - root] Target: []
+[05/20/2022 17:22:31 - INFO - root] Position: []
+[05/20/2022 17:22:31 - INFO - root] Labels: []
+[05/20/2022 17:22:31 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[05/20/2022 17:22:31 - INFO - root] ***** Running evaluation *****
+[05/20/2022 17:22:31 - INFO - root]   Num examples = 1158
+[05/20/2022 17:22:31 - INFO - root]   Batch size = 16
+[05/20/2022 17:23:37 - INFO - root] Save generation result in ../models/in_domain/grf-in_domain_eval/result_ep:test.txt
+[05/20/2022 17:23:37 - INFO - root] Test evaluate bleu: 0.0359
