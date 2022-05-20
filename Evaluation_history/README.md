@@ -27,4 +27,4 @@
 
         sacrebleu reference_target.txt -i prediction.txt -b -m bleu -w 3 --lowercase
     
-    - **prediction.txt** can by either `result_ep:test.txt（Multigen）` or `generated_predictions.txt（T5-small）` in this repo.
+    - **prediction.txt** can be either `result_ep:test.txt（Multigen）` or `generated_predictions.txt（T5-small）` in this repo.
