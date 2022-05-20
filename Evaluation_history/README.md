@@ -17,7 +17,7 @@
 
     - for T5-small：
 
-            python3 ppl_test_preprocess.py --source_file ../source.csv --predict_out_file ../result_ep\:test.txt
+            python3 ppl_test_preprocess.py --source_file ../source.csv --predict_out_file ../generated_predictions.txt
             python3 perplexity.py ../ppl_input.txt
 
 
