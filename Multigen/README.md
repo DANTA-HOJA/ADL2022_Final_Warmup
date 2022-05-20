@@ -10,6 +10,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
     spacy == 3.3.0
     torch-scatter *（depends on your torch version）
     fairseq == 0.10.2
+    apex *
 
 - NOTE：
 
@@ -18,6 +19,7 @@ based on [Multigen repo](https://github.com/cdjhz/multigen) *
     - installation of `torch-scatter`： https://github.com/rusty1s/pytorch_scatter, for example, this repo demonstrate on `torch==1.10.1+cu111` so run
 
             pip install torch-scatter -f https://data.pyg.org/whl/torch-1.10.1+cu111.html
+    - installation of `apex`：https://github.com/nvidia/apex
 
 
 # HOW TO TRAIN
