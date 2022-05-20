@@ -1,8 +1,8 @@
-export DATA_TYPE={in_domain, out_of_domain}
+export DATA_TYPE=${1}
 export ROOT_PATH=..
 export DEVICE=1
 export CUDA_VISIBLE_DEVICES=${DEVICE}
-export PRE_TRAINED=# pre-trained aNLG   # 換成 train 好的 aNLG
+export PRE_TRAINED=anlg/grf-anlg   # 換成 train 好的 aNLG 
 
 python3 main.py \
     --train_data_file ${ROOT_PATH}/data/${DATA_TYPE}/train \
