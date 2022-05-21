@@ -179,8 +179,8 @@ No need to cherry pick the best samples. Feel free to discuss any advantages or 
 # Problem 2
 
 - Multigen：
-  - in_domain：sacrebleu => 4.523, ppl => 55.59539031982422
-  - out_of_domain：sacrebleu => 4.182, ppl => 53.03252029418945
+  - in_domain：sacrebleu => 4.523, ppl => 41.6023063659668
+  - out_of_domain：sacrebleu => 4.182, ppl => 40.37883758544922
 
 - T5-small：
   - in_domain：sacrebleu => 7.198, ppl => 35.70747375488281
@@ -196,7 +196,7 @@ No need to cherry pick the best samples. Feel free to discuss any advantages or 
   - T5-samll：i work in a library. / I have a lot of cows as pets. / i had cows as pets growing up.
   - Multigen：i work in a library. /  I work in a library. / i had cows as pets growing up.
 
-  > 不通順，這組原本的轉換重點應該是 go to the library to read about farming，但上 conceptnet 好像找不到 book 和 farm 的關聯，可能是因為這樣才表現不好
+  > 不通順，這組原本的轉換重點應該是 go to the library to read about farming，但上 conceptnet 好像找不到 book 和 farm 的直接關聯，可能是因為這樣才表現不好
 
 - sample 2
 
@@ -205,7 +205,7 @@ No need to cherry pick the best samples. Feel free to discuss any advantages or 
   - T5-samll：i work with automobiles. / I work with automobiles and I can watch tv for hours. / i can watch tv for hours.
   - Multigen：i work with automobiles. / I work with cars. / i can watch tv for hours.
 
-  > T5 雖然是通順的但直接把兩句接在一起，其實沒有什麼轉換效果，Multigen 有抓到 automobiles 和 cars 的關聯但 tv 跟 car 好像沒有收錄關聯性，所以轉不太過去，T5可能語意上順暢一點
+  > T5 雖然是通順的但直接把兩句接在一起，其實沒有什麼轉換效果，Multigen 有抓到 automobiles 和 cars 的關聯但 tv 跟 car 好像沒有收錄直接關聯性，所以轉不太過去，T5可能語意上順暢一點
 
 - sample 3
 
@@ -233,3 +233,55 @@ No need to cherry pick the best samples. Feel free to discuss any advantages or 
   - Multigen：i doodle when i am sitting in my college lectures. / I doodle when I am not studying. / i want to live in an imaginary planet.
 
   > 普通通順，這組雖然變成和 reference 相反的語意，但語句蠻通順的，reference 本身就蠻抽象的除非類似的 data 很多，不然應該很難呈現 boring -> imaginary planet 的路徑
+
+
+## out_of_domain
+
+- sample 1
+
+  - reference：i enjoy playing xbox. / We always had video games growing up.  My mom worked in computer technology. / my mom was in the computer technology field.
+
+  - T5-samll：i enjoy playing xbox. / I like playing xbox. / my mom was in the computer technology field.
+  - Multigen：i enjoy playing xbox. / I like to play video games with my mom. / my mom was in the computer technology field.
+
+  > 可以看出這個例子中 T5 和 Multigen 就有比較明顯的差異，Multigen 確實有起到轉換的作用，且語意是正常且通順的，conceptnet 中也可以利用 xbox -> game, game <- computer 找到關聯，但若要作為整個對話的 transition 可能還是有點勉強
+
+- sample 2
+
+  - reference：i like vehicles. / I painted my vehicle green in the shade of emerald. / i like the shade of emerald.
+
+  - T5-samll：i like vehicles. / I like vehicles. I like the shade of emerald. / i like the shade of emerald.
+  - Multigen：i like vehicles. / I like cars that have a lot of color. / i like the shade of emerald.
+
+  > 這個例子中 T5 還是一樣直接把句子對接，但 Multigen 生成了我覺得非常不錯的答案，很明顯有抓到 shade of emerald <-> color 而且是車可以有很多顏色，雖然跟標準答案方向不一樣，但是一個很不錯的 transition
+
+- sample 3
+
+  - reference：i love to eat meat. / I want to travel around the world to try different meats. / i never go traveling with anyone.
+
+  - T5-samll：i love to eat meat. / I love to eat meat. I never go traveling with anyone. / i never go traveling with anyone.
+  - Multigen：i love to eat meat. / I like to eat meat when I travel. / i never go traveling with anyone.
+
+  > 這個例子 Multigen 看起來也有起到一點作用，產生的句子是流暢的，但銜接效果還是不佳，T5 還是繼續無情對接。
+
+- sample 4
+
+  - reference：i hate ham. / I hate ham. I actually hate most meat; I prefer vegetables and I really enjoy fruit. / i really enjoy fruit.
+
+  - T5-samll：i hate ham. / I like fruit. / i really enjoy fruit.
+  - Multigen：i hate ham. / I don't like fruit, but I do like to eat fruit. / i really enjoy fruit.
+
+  > 這個例子 reference 算是中規中矩的 transition，但反而 T5 這個時候卻又沒有對接，Multigen 反而生成一個前後意義相反的句子，可能是前面後兩句剛好是反義詞，但目標物在過程中抓錯了，才變成這樣。
+
+- sample 5
+
+  - reference：i worry about my image. / some people might think I live in an unsafe place / i live in a bad neighborhood.
+
+  - T5-samll：i worry about my image. / I have to worry about my image. I live in a bad neighborhood. / i live in a bad neighborhood.
+  - Multigen：i worry about my image. / I worry about my image because I live in a bad neighborhood. / i live in a bad neighborhood.
+
+  > 這個例子 Multigen 和 T5 都算生成的不錯，雖然 T5 感覺還是傾向直接接在一起但這次有多幾個字來強調擔心的部分，Multigen 有抓到正確的因果關係，或許 image 和 bad 抓到了兩個之間的關係。
+
+
+
+- 結論：在挑選 in_domain sample 的時候，我是從 text.csv 裡面挑我覺得轉換效果不錯的對話再看 model 的轉換效果，但應該是 train 的不夠久導致我認為不錯的 sample 在 T5-small 和 Multigen 的預測表現上其實差不多，都沒什麼作用，大多是把兩個對話接在一起當成轉換的句子，尤其 T5 在這方面十分明顯（經常使用 and 直接將兩句對話銜接，甚至直接對街），可能是因為這樣導致 T5 的 ppl 比較差。因此在選 out_of_domain sample 的時候變成以 Multigen 的作為基準來尋找比較好的答案，雖然 Multigen 在 transition 上確實可以表現出比較優異的效果（有產生新的句子而不是單純的連接兩個句子），但同時 Multigen 也可能會出現較多奇怪的句子。整體而言，在目前的 training 條件下兩者的預測結果都差強人意，而且相同結果的也很多，單看目前的 generate 結果也很難猜出中間到底經過什麼 path，或許將 epoch 增加到數十次之後可以開始感受到 T5 與 Multigen 的明顯差異。
