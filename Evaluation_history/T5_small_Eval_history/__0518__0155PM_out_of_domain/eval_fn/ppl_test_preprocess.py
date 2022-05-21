@@ -38,7 +38,7 @@ def main():
     
     with open(args.predict_out_file) as PrdFile:
         for line in PrdFile:
-            line.lstrip()
+            line = line.lstrip()
             line = line.split("\n")[0]
             transition.append(line)
             
