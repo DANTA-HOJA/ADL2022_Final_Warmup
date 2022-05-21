@@ -6,7 +6,7 @@
 
         eval_fn/ ---> Multigen_Eval_history/grf-in_domain_eval/eval_fn/
 
-- before evaluation make sure 3 file in your *result folder*
+- before evaluation make sure **Three** file in your *result folder*
 
 		- source.csv
 		- reference_target.txt
