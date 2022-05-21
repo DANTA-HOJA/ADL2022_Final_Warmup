@@ -285,4 +285,5 @@ No need to cherry pick the best samples. Feel free to discuss any advantages or 
 
 
 ## 結論
+
 在挑選 in_domain sample 的時候，我是從 text.csv 裡面挑我覺得轉換效果不錯的對話再看 model 的轉換效果，但應該是 train 的不夠久導致我認為不錯的 sample 在 T5-small 和 Multigen 的預測表現上其實差不多，都沒什麼作用，大多是把兩個對話接在一起當成轉換的句子，尤其 T5 在這方面十分明顯（經常使用 and 直接將兩句對話銜接，甚至直接對街），可能是因為這樣導致 T5 的 ppl 比較差。因此在選 out_of_domain sample 的時候變成以 Multigen 的作為基準來尋找比較好的答案，雖然 Multigen 在 transition 上確實可以表現出比較優異的效果（有產生新的句子而不是單純的連接兩個句子），但同時 Multigen 也可能會出現較多奇怪的句子。整體而言，在目前的 training 條件下兩者的預測結果都差強人意，而且相同結果的也很多，單看目前的 generate 結果也很難猜出中間到底經過什麼 path，或許將 epoch 增加到數十次之後可以開始感受到 T5 與 Multigen 的明顯差異。
