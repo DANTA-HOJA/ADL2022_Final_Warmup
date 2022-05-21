@@ -5,17 +5,8 @@
 - `cd OTTers/data/in_domain/` and run `write_csv.py` (will generate `text.csv` under each subfolder)
 - `cd OTTers/data/out_of_domain/` and run `write_csv.py` (will generate `text.csv` under each subfolder)
 - Run `train.py` with proper command line argument
-
-
-
-# HOW TO EVALUATE
-
-- sacreBLEU
-    - will use two file, `generated_predictions.txt` and `reference_target.txt`, you can find it under `--output_dir` which your assign to script.
-    - install [sacreBLEU](https://github.com/mjpost/sacrebleu) and run：
-
-            sacrebleu reference_target.txt -i generated_predictions.txt -b -m bleu -w 3 --lowercase
-
+- it will `generated_predictions.txt` and `reference_target.txt` under `T5_small/runs/finetune/`
+- see [../Evaluation_history/README.md](../Evaluation_history/README.md) to get evaluation score.
 
 
 # NOTE:
@@ -23,3 +14,4 @@
     > Comment：非常垃圾，給的 sample script 會跳 error，用不到的 code 也不刪一刪，以為自己講得很好，殊不知就是在混淆大眾，從 HW1 開始就一直有這種問題。
 - Calculate the sacreBLEU for only the TRANSITION SENTENCE you genereated.
 - Calculate the perplexity based on the CONCATENATED DIALOGUE.
+- `reference_target.txt` will use by both **Multigen** and **T5-small** model while calculating evaluation score.
