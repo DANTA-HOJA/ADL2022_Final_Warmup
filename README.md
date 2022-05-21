@@ -25,7 +25,8 @@
 
 - N-gram matching based score：[**sacreBLEU**](https://github.com/mjpost/sacrebleu)
 - Fluency score：**Perplexity**（[TA's sample script：perplexity.py](https://drive.google.com/drive/folders/1w3dlUWpFTQz5EVVeKdIM_5bmKTsJsdGu)）
-
+- Calculate the sacreBLEU for only the **TRANSITION SENTENCE** you genereated.
+- Calculate the perplexity based on the **CONCATENATED DIALOGUE**.
 - Please check [./Evaluation_history/README.md](./Evaluation_history/README.md) for detail usage
 
 
